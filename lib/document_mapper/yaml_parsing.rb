@@ -32,6 +32,8 @@ module DocumentMapper
         self.attributes[:day] = self.attributes[:date].day
       end
 
+      after_load if respond_to?(:after_load)
+
       self.class.define_attribute_methods self.attributes.keys
       self.attributes.keys.each { |attr| self.class.define_read_method attr }
     end
