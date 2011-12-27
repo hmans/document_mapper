@@ -25,6 +25,8 @@ module DocumentMapper
         attributes[:month] = attributes[:date].month
         attributes[:day]   = attributes[:date].day
       end
+
+      after_load if respond_to?(:after_load)
     end
 
     def read_yaml(yaml)
