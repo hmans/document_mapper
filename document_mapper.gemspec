@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('activemodel', '~> 3.1.0')
   s.add_runtime_dependency('rake', '~> 0.9.0')
   s.add_runtime_dependency('tilt', '~> 1.3.0')
+  s.add_runtime_dependency('json', '~> 1.6.4')
+
   s.add_development_dependency('RedCloth', '~> 4.2.0')
   s.add_development_dependency('minitest', '~> 2.6.0')
 

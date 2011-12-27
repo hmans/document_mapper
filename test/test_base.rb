@@ -13,6 +13,11 @@ class MyDocument
   include DocumentMapper::FilesystemStore
 end
 
+class MyDropboxDocument
+  include DocumentMapper::Document
+  include DocumentMapper::DropboxStore
+end
+
 module MiniTest::Assertions
   def assert_equal_set exp, act, msg = nil
     msg = message(msg) { "Expected #{mu_pp(exp)}, not #{mu_pp(act)}" }
