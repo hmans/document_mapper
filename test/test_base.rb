@@ -10,6 +10,7 @@ require 'document_mapper'
 
 class MyDocument
   include DocumentMapper::Document
+  include DocumentMapper::FilesystemStore
 end
 
 module MiniTest::Assertions

@@ -22,12 +22,13 @@ I like Ruby.
 ```
 
 
-In order to access the values in the front matter, you have to create a class that includes ```DocumentMapper```.
+In order to access the values in the front matter, you have to create a class that includes ```DocumentMapper::Document``` as well as your preferred store mixin.
 
 ```ruby
 require 'document_mapper'
 class MyDocument
   include DocumentMapper::Document
+  include DocumentMapper::FilesystemStore
 end
 ```
 

@@ -278,6 +278,7 @@ describe MyDocument do
 
   describe 'reloading the Document class' do
     it 'should discover new documents' do
+
       @file_path = 'test/documents/2011-04-26-new-stuff.textile'
       File.open(@file_path, 'w') do |f|
         f.write <<-EOS
@@ -289,6 +290,7 @@ title: Some brand new document
 Very new stuff.
 EOS
       end
+
       MyDocument.reload
       assert_equal [1,2,3,4,5].sort, MyDocument.all.map(&:id).sort
     end
@@ -320,8 +322,8 @@ EOS
         tags
         title
         year
-      ).map(&:to_sym)
-      assert_equal expected_attributes, MyDocument.attributes
+      ).map(&:to_sym).sort
+      assert_equal expected_attributes, MyDocument.attributes.sort
     end
   end
 
