@@ -30,23 +30,9 @@ module DocumentMapper
         # this method is overwritten by the *Store mixins.
       end
 
-      def from_file(file_path)
-        if !File.exist? file_path
-          raise FileNotFoundError
-        end
-
-        yaml = File.read(File.expand_path(file_path))
-
-        self.from_yaml(yaml).tap do |document|
-          document.file_path = file_path
-          document.generate_accessors
-          self.documents << document
-        end
-      end
-
-      def from_yaml(yaml)
+      def from_string(s)
         new.tap do |document|
-          document.read_yaml(yaml)
+          document.parse_content(s)
         end
       end
 

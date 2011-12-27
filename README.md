@@ -35,7 +35,7 @@ end
 ### Initializing single documents
 
 ```ruby
-doc = MyDocument.from_file('./documents/document-file.textile')
+doc = MyDocument.load('./documents/document-file.textile')
 ```
 
 

@@ -9,7 +9,7 @@ describe MyDocument do
   describe 'loading a document from file' do
     before do
       @file_path = sample_file_path_1
-      @document = MyDocument.from_file(@file_path)
+      @document = MyDocument.load(@file_path)
     end
 
     it 'should load the document from a yaml file' do
@@ -330,7 +330,7 @@ EOS
   describe 'rendering the document as html' do
     before do
       @file_path = sample_file_path_1
-      @document = MyDocument.from_file(@file_path)
+      @document = MyDocument.load(@file_path)
     end
 
     it 'should render the content as html' do
@@ -347,20 +347,20 @@ EOS
   end
 
   def sample_document_1
-    MyDocument.from_file(sample_file_path_1)
+    MyDocument.load(sample_file_path_1)
   end
 
   def sample_document_2
-    MyDocument.from_file(sample_file_path_2)
+    MyDocument.load(sample_file_path_2)
   end
 
   def sample_document_with_date_in_yaml
     file_path = 'test/documents/document_with_date_in_yaml.textile'
-    MyDocument.from_file(file_path)
+    MyDocument.load(file_path)
   end
 
   def sample_document_without_date
     file_path = 'test/documents/document_without_date.textile'
-    MyDocument.from_file(file_path)
+    MyDocument.load(file_path)
   end
 end
